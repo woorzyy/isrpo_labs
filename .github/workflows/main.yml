@@ -20,8 +20,9 @@ jobs:
 
     - name: Install dependencies
       run: |
+        python -m pip install --upgrade pip
         pip install pytest
-        pip install -e .  # Устанавливает geometric_lib как пакет
+        pip install -e .  # Это установит geometric_lib как пакет
 
     - name: Run tests
       run: |
