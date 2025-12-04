@@ -18,9 +18,11 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Install pytest
-      run: pip install pytest
+    - name: Install dependencies
+      run: |
+        pip install pytest
+        pip install -e .  # Устанавливает geometric_lib как пакет
 
-    - name: Run geometric tests
+    - name: Run tests
       run: |
         python -m pytest tests/ -v
